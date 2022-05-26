@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "GiGi Lyrics",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

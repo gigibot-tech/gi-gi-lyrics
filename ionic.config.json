@@ -1,0 +1,8 @@
+{
+  "name": "GiGi Lyrics",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "07608461"
+}
