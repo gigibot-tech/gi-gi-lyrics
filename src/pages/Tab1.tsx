@@ -1,29 +1,26 @@
-import { IonContent, IonHeader, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Tab1.css';
+import { RouteComponentProps} from 'react-router-dom';
+import React, { useState } from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar, IonFooter } from '@ionic/react';
 
-const Tab1: React.FC = () => {
+export const Tab1: React.FC = () => {
+  const [searchText, setSearchText] = useState('');
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Lyrics Search</IonTitle>
+          <IonTitle>IonSearchBar Examples</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
-        <IonSearchbar name="Search"> Search Songs:
-        </IonSearchbar>
-        <div className="table">{lyrics}
-        </div>
-      </IonContent>
+      <IonContent>
+        <p>Default Searchbar</p>
+        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)}></IonSearchbar>
+        </IonContent>
+      <IonFooter>
+        <IonToolbar>
+          Search Text: {searchText ?? '(none)'}
+        </IonToolbar>
+      </IonFooter>
     </IonPage>
   );
 };
-
-export default Tab1;
