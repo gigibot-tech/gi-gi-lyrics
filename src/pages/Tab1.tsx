@@ -2,6 +2,7 @@ import './Tab1.css';
 import { RouteComponentProps} from 'react-router-dom';
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar, IonFooter } from '@ionic/react';
+import List from '../components/List';
 
 export const Tab1: React.FC = () => {
   const [searchText, setSearchText] = useState('');
@@ -13,6 +14,7 @@ export const Tab1: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
+        <List />
         <p>Default Searchbar</p>
         <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)}></IonSearchbar>
         </IonContent>
