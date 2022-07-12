@@ -1,10 +1,13 @@
 import './Tab1.css';
 import { RouteComponentProps} from 'react-router-dom';
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar, IonFooter } from '@ionic/react';
+import { IonItem, IonLabel, IonRouterOutlet, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar, IonFooter } from '@ionic/react';
 import List from '../components/List';
+import { Redirect, Route } from 'react-router-dom';
+import UserDetailPage from '../components/UserDetail';
+import { addStorage, searchStorage}  from '../components/storage';
 
-export const Tab1: React.FC = () => {
+export const Tab1: React.FC<RouteComponentProps> = ( {match} ) => {
   const [searchText, setSearchText] = useState('');
   return (
     <IonPage>
@@ -14,9 +17,11 @@ export const Tab1: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <List />
+
+        <List search={searchText} songs= {searchStorage(searchText)} />
         <p>Default Searchbar</p>
-        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)}></IonSearchbar>
+        <IonSearchbar value={searchText} onIonChange={e => 
+         setSearchText(e.detail.value!) }></IonSearchbar>
         </IonContent>
       <IonFooter>
         <IonToolbar>

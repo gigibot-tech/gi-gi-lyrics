@@ -33,6 +33,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import UserDetailPage from './components/UserDetail';
 
 setupIonicReact();
 
@@ -42,9 +43,9 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
-          </Route>
+          <Route exact path="/tab1" render={props => <Tab1 {...props} />}component={Tab1}/>
+          <Route path={`/tab1/songs/:id`} render={props => <UserDetailPage {...props} />}component={UserDetailPage} />
+          <Redirect exact from="/" to="/tab1" />
           <Route exact path="/tab2">
             <Tab2 />
           </Route>
