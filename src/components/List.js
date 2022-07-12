@@ -8,7 +8,7 @@ import { Storage } from '@ionic/storage'
 import { addStorage, searchStorage}  from './storage';
 import { Search } from './Search'
 import { useParams } from 'react-router';
-import {Lyrics} from '/Lyrics';
+import {Lyrics} from './Lyrics';
 
 const List = (props) => {
   const [songs, setSongs] = useState([]);
