@@ -3,10 +3,9 @@ import { RouteComponentProps, useHistory } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { IonRouterOutlet, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar, IonFooter } from '@ionic/react';
 import { Redirect, Route } from 'react-router-dom';
-import Lyrics from './Lyrics';
 import { Storage } from '@ionic/storage'
 import { journalSharp } from 'ionicons/icons';
-//import { Lyrics } from './Lyrics'
+import { Lyrics } from './Lyrics'
 import { searchStorage } from './storage';
 
 interface UserDetailPageProps

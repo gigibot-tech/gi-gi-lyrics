@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Lyrics extends Component{
+export class Lyrics extends Component{
     state = {}
     
         handleChange = (e) => {
