@@ -1,5 +1,4 @@
 import React, { Component } from  'react';
-import test from '../test.json';
 
 class AddSong extends Component {
     state = { song_name: null,
