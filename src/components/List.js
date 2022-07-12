@@ -36,6 +36,18 @@ const List = (props) => {
     setSongs(new_songs)
     console.log(songs)
   }
+  
+  const addJp = async(search) => {
+    let jps = await searchStorage(search)
+    console.log(search)
+    console.log('sStorage jp search - found:')
+    console.log(jps)
+    console.log('current jp:')
+    console.log(jp)
+    console.log('appending jps-')
+    //this.setState({songs: songs})
+    setJp(jps[0]['lyrics_jp'])
+    console.log(jp)  }
 
   //render(){
     //const { results } = this.props
